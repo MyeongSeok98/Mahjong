@@ -1,0 +1,80 @@
+body {
+  margin: 0 auto;
+  width: 960px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+#top-nav {
+  color: white;
+  background-color: rgb(59, 102, 23);
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+#top-nav a {
+  color: white;
+}
+
+#top-nav ul {
+  display: flex; /* flexbox 사용 */
+  justify-content: space-between; /* 항목 간의 간격을 자동으로 조정 */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* 기본 리스트 스타일 제거 */
+}
+
+#top-nav li {
+  display: inline-block;
+  flex: 1;
+  text-align: center;
+}
+
+#content {
+  background-color: rgb(125, 255, 171);
+  overflow: hidden;
+}
+
+/* 반응형 웹 디자인을 위한 미디어 쿼리 */
+
+/* 화면 너비가 768px 이하인 경우 - 태블릿 및 중간 크기 화면 */
+@media (max-width: 768px) {
+  body {
+    width: 100%; /* 전체 너비로 확장 */
+    padding: 0 20px; /* 좌우 여백 추가 */
+  }
+
+  #top-nav ul {
+    flex-direction: column; /* 세로 정렬로 변경 */
+  }
+
+  #top-nav li {
+    padding: 10px 0;
+  }
+
+  #content {
+    padding: 10px; /* 컨텐츠 내 여백 추가 */
+  }
+}
+
+/* 화면 너비가 480px 이하인 경우 - 모바일 크기 화면 */
+@media (max-width: 480px) {
+  body {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  #top-nav ul {
+    flex-direction: column; /* 모바일에서는 세로로 정렬 */
+  }
+
+  #top-nav li {
+    padding: 8px 0;
+  }
+}

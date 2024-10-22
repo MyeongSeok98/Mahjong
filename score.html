@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <header id="header">
+        <div id="top-nav">
+          <ul>
+            <li><a href="http://localhost:3000/">TOP</a></li>
+            <li><a href="http://localhost:3000/scorerule">점수계산표</a></li>
+            <li><a href="http://localhost:3000/score">점수계산</a></li>
+          </ul>
+        </div>
+      </header>
+      <div id="content">
+        <form action="">
+          <table>
+            <tr>
+              <td colspan="2">
+                <select name="tsumo_ron" id="tsumo_ron">
+                  <option value="tsumo">쯔모</option>
+                  <option value="ron">론</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>도라 :</td>
+              <td>
+                <input type="number" name="dora" id="dora" value="0" />
+              </td>
+            </tr>
+            <tr>
+              <td>오야 :</td>
+              <td><input type="checkbox" name="oya" id="oya" /></td>
+            </tr>
+            <tr>
+              <td>리치 :</td>
+              <td><input type="checkbox" name="riichi" id="riichi" /></td>
+
+              <td>더블 리치 :</td>
+              <td>
+                <input
+                  type="checkbox"
+                  name="double_riichi"
+                  id="double_riichi"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>일발 :</td>
+              <td><input type="checkbox" name="ippatsu" id="ippatsu" /></td>
+
+              <td>창깡 :</td>
+              <td><input type="checkbox" name="chankan" id="chankan" /></td>
+            </tr>
+            <tr>
+              <td>영상개화 :</td>
+              <td>
+                <input
+                  type="checkbox"
+                  name="rinshan_kaihou"
+                  id="rinshan_kaihou"
+                />
+              </td>
+
+              <td>해저로월 :</td>
+              <td><input type="checkbox" name="haitei" id="haitei" /></td>
+            </tr>
+          </table>
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+      <footer id="footer"></footer>
+    </div>
+  </body>
+</html>

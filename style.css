@@ -78,3 +78,18 @@ a {
     padding: 8px 0;
   }
 }
+
+#tile-selection,
+#selected-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#tile-selection img,
+#selected-tiles img {
+  width: 50px;
+  height: 70px;
+  margin: 1px;
+  cursor: pointer;
+}

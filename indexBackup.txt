@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <header id="header">
+        <div id="top-nav">
+          <ul>
+            <li><a href="http://localhost:3000/">TOP</a></li>
+            <li><a href="http://localhost:3000/scorerule">점수계산표</a></li>
+            <li><a href="http://localhost:3000/score">점수계산</a></li>
+          </ul>
+        </div>
+      </header>
+      <div id="content">
+        <form action="">
+          <table>
+            <tr>
+              <td colspan="2">
+                <select name="tsumo_ron" id="tsumo_ron">
+                  <option value="tsumo">쯔모</option>
+                  <option value="ron">론</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>장 : </td>
+              <td>
+                <select name="prevalent" id="prevalent">
+                  <option value="east">동장</option>
+                  <option value="south">남장</option>
+                </select>
+              </td>
+              <td>자리 : </td>
+              <td>
+                <select name="seat" id="seat">
+                  <option value="eastSeat">동</option>
+                  <option value="southSeat">남</option>
+                  <option value="westSeat">서</option>
+                  <option value="northSeat">북</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                안커 갯수
+              </td>
+              <td>
+                <input type="number" name="ankou" id="ankou" value="0" />
+              </td>
+            </tr>
+            <tr>
+              <td>도라 :</td>
+              <td>
+                <input type="number" name="dora" id="dora" value="0" />
+              </td>
+            </tr>
+            <tr>
+              <td>오야 :</td>
+              <td><input type="checkbox" name="oya" id="oya" /></td>
+            </tr>
+            <tr>
+              <td>리치 :</td>
+              <td><input type="checkbox" name="riichi" id="riichi" /></td>
+
+              <td>더블 리치 :</td>
+              <td>
+                <input
+                  type="checkbox"
+                  name="double_riichi"
+                  id="double_riichi"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>일발 :</td>
+              <td><input type="checkbox" name="ippatsu" id="ippatsu" /></td>
+
+              <td>창깡 :</td>
+              <td><input type="checkbox" name="chankan" id="chankan" /></td>
+            </tr>
+            <tr>
+              <td>영상개화 :</td>
+              <td>
+                <input
+                  type="checkbox"
+                  name="rinshan_kaihou"
+                  id="rinshan_kaihou"
+                />
+              </td>
+
+              <td>해저로월 :</td>
+              <td><input type="checkbox" name="haitei" id="haitei" /></td>
+            </tr>
+            <tr>
+              <td>멘젠 :</td>
+              <td><input type="checkbox" name="menzen" id="menzen"></td>
+              <td>양면대기 :</td>
+              <td><input type="checkbox" name="doubletaiki" id="doubletaiki"></td>
+            </tr>
+          </table>
+          <h3>선택된 패:</h3>
+          <div id="selected-tiles"></div>
+          <input type="submit" value="submit" id="submit"/>
+        </form>
+
+    <h2>패 선택</h2>
+    <div id="tile-selection">
+      <!-- 1m ~ 9m -->
+      <img src="MahjongSVG/1m.svg" alt="1m" data-tile="1m" />
+      <img src="MahjongSVG/2m.svg" alt="2m" data-tile="2m" />
+      <img src="MahjongSVG/3m.svg" alt="3m" data-tile="3m" />
+      <img src="MahjongSVG/4m.svg" alt="4m" data-tile="4m" />
+      <img src="MahjongSVG/5m.svg" alt="5m" data-tile="5m" />
+      <img src="MahjongSVG/6m.svg" alt="6m" data-tile="6m" />
+      <img src="MahjongSVG/7m.svg" alt="7m" data-tile="7m" />
+      <img src="MahjongSVG/8m.svg" alt="8m" data-tile="8m" />
+      <img src="MahjongSVG/9m.svg" alt="9m" data-tile="9m" />
+
+      <!-- 1p ~ 9p -->
+      <img src="MahjongSVG/1p.svg" alt="1p" data-tile="1p" />
+      <img src="MahjongSVG/2p.svg" alt="2p" data-tile="2p" />
+      <img src="MahjongSVG/3p.svg" alt="3p" data-tile="3p" />
+      <img src="MahjongSVG/4p.svg" alt="4p" data-tile="4p" />
+      <img src="MahjongSVG/5p.svg" alt="5p" data-tile="5p" />
+      <img src="MahjongSVG/6p.svg" alt="6p" data-tile="6p" />
+      <img src="MahjongSVG/7p.svg" alt="7p" data-tile="7p" />
+      <img src="MahjongSVG/8p.svg" alt="8p" data-tile="8p" />
+      <img src="MahjongSVG/9p.svg" alt="9p" data-tile="9p" />
+
+      <!-- 1s ~ 9s -->
+      <img src="MahjongSVG/1s.svg" alt="1s" data-tile="1s" />
+      <img src="MahjongSVG/2s.svg" alt="2s" data-tile="2s" />
+      <img src="MahjongSVG/3s.svg" alt="3s" data-tile="3s" />
+      <img src="MahjongSVG/4s.svg" alt="4s" data-tile="4s" />
+      <img src="MahjongSVG/5s.svg" alt="5s" data-tile="5s" />
+      <img src="MahjongSVG/6s.svg" alt="6s" data-tile="6s" />
+      <img src="MahjongSVG/7s.svg" alt="7s" data-tile="7s" />
+      <img src="MahjongSVG/8s.svg" alt="8s" data-tile="8s" />
+      <img src="MahjongSVG/9s.svg" alt="9s" data-tile="9s" />
+
+      <!-- 1z ~ 9z -->
+      <img src="MahjongSVG/1z.svg" alt="1z" data-tile="1z" />
+      <img src="MahjongSVG/2z.svg" alt="2z" data-tile="2z" />
+      <img src="MahjongSVG/3z.svg" alt="3z" data-tile="3z" />
+      <img src="MahjongSVG/4z.svg" alt="4z" data-tile="4z" />
+      <img src="MahjongSVG/5z.svg" alt="5z" data-tile="5z" />
+      <img src="MahjongSVG/6z.svg" alt="6z" data-tile="6z" />
+      <img src="MahjongSVG/7z.svg" alt="7z" data-tile="7z" />
+    </div>
+  </div>
+      </div>
+      <footer id="footer"></footer>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const eachTileCount = {}; // 선택된 타일의 개수를 저장하는 객체
+        let allTileCount = 0;
+        const selectedTilesContainer = document.getElementById("selected-tiles");
+        const selectedTilesInput = document.createElement("input");
+        selectedTilesInput.type = "hidden";
+        selectedTilesInput.name = "selected_tiles";
+        document.forms[0].appendChild(selectedTilesInput);
+
+        // 타일 선택 클릭 이벤트 처리
+        document.querySelectorAll("#tile-selection img").forEach((img) => {
+          img.addEventListener("click", () => {
+            const tileType = img.getAttribute("data-tile");
+
+            // 선택된 타일이 4개 미만일 때만 추가
+            if (!eachTileCount[tileType]) eachTileCount[tileType] = 0;
+            if (eachTileCount[tileType] < 4 && allTileCount < 14) {
+              const selectedTile = img.cloneNode();
+              eachTileCount[tileType] += 1;
+              allTileCount += 1;
+              console.log(allTileCount);
+
+              // 선택된 타일 클릭 시 제거
+              selectedTile.addEventListener("click", () => {
+                selectedTilesContainer.removeChild(selectedTile);
+                eachTileCount[tileType] -= 1;
+                updateSelectedTilesInput();
+                allTileCount -= 1;
+                console.log(allTileCount);
+              });
+
+              selectedTilesContainer.appendChild(selectedTile);
+              updateSelectedTilesInput();
+            } else if(eachTileCount[tileType] >= 4 ){
+              alert(`같은 패는 4개보다 더 선택할 수 없습니다.`);
+            }
+            else{
+              alert(`패산을 15개 이상 구성할 수 없습니다.`);
+            }
+          });
+        });
+
+        // 선택된 타일 목록을 input 필드에 업데이트
+        function updateSelectedTilesInput() {
+          const selectedTiles = [];
+          for (const tile in eachTileCount) {
+            for (let i = 0; i < eachTileCount[tile]; i++) {
+              selectedTiles.push(tile);
+            }
+          }
+          selectedTilesInput.value = selectedTiles.join(",");
+          console.log(selectedTiles);
+        }
+        
+        //패산 14개가 아니면 오류
+        document.forms[0].addEventListener("submit", (event) => {
+          if (allTileCount < 14) {
+          event.preventDefault(); // 폼 제출 중단
+          alert("패산은 14개이어야 합니다.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

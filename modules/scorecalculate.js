@@ -14,7 +14,7 @@ const scoreTable = {
   ],
 };
 
-const scoreCaculate = function ScoreCalculate(fan, busu, chitoitsu, oya) {
+function ScoreCalculate(fan, busu, chitoitsu, oya) {
   var totalScore;
   var scoreFan = fan - 1;
   var scoreBusu;
@@ -42,4 +42,8 @@ const scoreCaculate = function ScoreCalculate(fan, busu, chitoitsu, oya) {
     else if (scoreFan >= 12) totalScore = 32000;
   }
   return totalScore;
+}
+
+module.exports = {
+  ScoreCalculate,
 };
